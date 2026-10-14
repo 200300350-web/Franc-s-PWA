@@ -478,18 +478,18 @@
     });
 
     // Quit lesson
+   // Quit lesson
     btnQuit.addEventListener('click', () => {
         if(confirm('¿Seguro que quieres salir? Perderás tu progreso.')) {
+            // Oculta la lección
+            screenLesson.classList.add('hidden');
             screenLesson.classList.remove('flex');
-            // ... resto de tu código
+            
+            // Muestra el menú principal
+            screenHome.classList.remove('hidden');
+            screenHome.classList.add('flex');
         }
     });
-                screenLesson.classList.add('hidden');
-                screenLesson.classList.remove('flex');
-                screenHome.classList.remove('hidden');
-                screenHome.classList.add('flex');
-            
-        ;
 
         // Go home from finish screen
         btnHome.addEventListener('click', () => {
