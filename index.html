@@ -116,28 +116,29 @@
         </header>
 
         <!-- Question Area -->
-        <main class="flex-1 flex flex-col p-4 overflow-y-auto pb-32">
-            <h2 class="text-2xl font-bold mb-6">Traduce esta palabra</h2>
+        <main class="flex-1 flex flex-col p-6 overflow-y-auto pb-32">
+            <h2 class="text-2xl font-extrabold mb-8 text-gray-800">Traduce esta palabra</h2>
             
-            <div class="flex items-center gap-4 mb-8">
+            <div class="flex items-center gap-4 mb-10 w-full">
                 <!-- Character Avatar (Placeholder Unicaribe) -->
-                <div class="w-20 h-20 bg-uc-turquoise-light rounded-full border-4 border-uc-gray flex items-center justify-center text-4xl">
+                <div class="w-24 h-24 shrink-0 bg-uc-turquoise-light rounded-full border-4 border-uc-gray flex items-center justify-center text-5xl shadow-sm">
                     🐬
                 </div>
                 <!-- Speech Bubble -->
-        <div class="relative bg-white border-2 border-uc-gray rounded-2xl p-4 shadow-sm flex-1 flex justify-between items-center">
-            <!-- Arrow -->
-            <div class="absolute w-4 h-4 bg-white border-l-2 border-b-2 border-uc-gray transform rotate-45 -left-[10px] top-6"></div>
-            <span id="question-text" class="text-xl font-bold text-gray-800 block">Bonjour</span>
-            
-            <!-- Botón de Audio -->
-            <button id="btn-audio" class="w-10 h-10 rounded-xl bg-uc-turquoise-light text-uc-turquoise-dark flex items-center justify-center text-xl hover:bg-uc-turquoise hover:text-white transition-colors active:scale-95">
-                🔊
-            </button>
-        </div>
+                <div class="relative bg-white border-2 border-uc-gray rounded-2xl p-5 shadow-sm flex-1 flex justify-between items-center">
+                    <!-- Arrow -->
+                    <div class="absolute w-4 h-4 bg-white border-l-2 border-b-2 border-uc-gray transform rotate-45 -left-[10px] top-8"></div>
+                    <span id="question-text" class="text-2xl font-bold text-gray-800 block">Bonjour</span>
+                    
+                    <!-- Botón de Audio -->
+                    <button id="btn-audio" class="w-12 h-12 shrink-0 rounded-xl bg-uc-turquoise-light text-uc-turquoise-dark flex items-center justify-center text-2xl hover:bg-uc-turquoise hover:text-white transition-colors active:scale-95 ml-2">
+                        🔊
+                    </button>
+                </div>
+            </div>
 
             <!-- 2x2 Options Grid -->
-            <div id="options-grid" class="grid grid-cols-2 gap-3 mt-auto">
+            <div id="options-grid" class="grid grid-cols-2 gap-4 mt-auto w-full">
                 <!-- Buttons injected here via JS -->
             </div>
         </main>
@@ -359,7 +360,7 @@
             optionsGrid.innerHTML = '';
             options.forEach(opt => {
                 const btn = document.createElement('button');
-                btn.className = 'btn-option bg-white border-2 border-uc-gray border-b-[4px] rounded-xl p-4 text-center font-bold text-gray-700 active:translate-y-1 active:border-b-0 hover:bg-gray-50 flex items-center justify-center min-h-[80px]';
+                btn.className = 'btn-option w-full bg-white border-2 border-uc-gray border-b-[4px] rounded-2xl p-4 text-center font-bold text-gray-700 active:translate-y-1 active:border-b-0 hover:bg-gray-50 flex items-center justify-center min-h-[100px] text-lg shadow-sm';
                 btn.textContent = opt;
                 btn.onclick = () => selectOption(btn, opt);
                 optionsGrid.appendChild(btn);
