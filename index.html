@@ -97,6 +97,19 @@
         <div id="category-list" class="flex flex-col gap-4 overflow-y-auto pb-6">
             <!-- Categories injected here -->
         </div>
+    <!-- Agrega este nuevo botón para la guía -->
+        <button id="btn-open-grammar" class="btn-3d w-full mt-2 p-4 bg-uc-navy border-2 border-uc-navy-dark border-b-[4px] rounded-2xl flex items-center justify-between text-left text-white active:translate-y-1 active:border-b-0 transition-all">
+            <div class="flex items-center gap-4">
+                <div class="w-12 h-12 bg-white text-uc-navy rounded-full flex items-center justify-center text-xl font-bold shadow-sm">
+                    <i class="fa-solid fa-book-open"></i>
+                </div>
+                <div>
+                    <h3 class="font-extrabold text-lg">Guía de Escritura</h3>
+                    <p class="text-sm font-bold opacity-80">Verbos, COD y COI</p>
+                </div>
+            </div>
+            <i class="fa-solid fa-chevron-right opacity-80"></i>
+        </button>
     </div>
 
     <!-- SCREEN 2: LESSON -->
@@ -172,7 +185,91 @@
             </button>
         </div>
     </div>
+<!-- SCREEN 4: GRAMMAR GUIDE -->
+    <div id="screen-grammar" class="hidden flex-col h-full max-w-md mx-auto w-full relative bg-white">
+        <header class="flex items-center justify-between p-4 border-b-2 border-uc-gray z-10 bg-white">
+            <button id="btn-close-grammar" class="text-uc-gray-dark hover:text-gray-600 text-2xl font-bold px-2">
+                <i class="fa-solid fa-arrow-left"></i>
+            </button>
+            <h1 class="text-xl font-extrabold text-uc-navy tracking-wide">Apuntes</h1>
+            <div class="w-8"></div> <!-- Spacer -->
+        </header>
 
+        <main class="flex-1 p-4 overflow-y-auto pb-12 space-y-8">
+            
+            <!-- Tabla: Verbos Comunes -->
+            <section>
+                <h2 class="text-lg font-extrabold text-uc-navy mb-3"><i class="fa-solid fa-bolt text-yellow-400 mr-2"></i>Verbos Más Comunes (con Je)</h2>
+                <div class="border-2 border-uc-gray rounded-xl overflow-hidden">
+                    <table class="w-full text-left border-collapse">
+                        <thead>
+                            <tr class="bg-uc-turquoise-light text-uc-navy-dark">
+                                <th class="p-3 border-b-2 border-uc-gray font-extrabold">Verbo</th>
+                                <th class="p-3 border-b-2 border-uc-gray font-extrabold">Conjugación</th>
+                                <th class="p-3 border-b-2 border-uc-gray font-extrabold">Significado</th>
+                            </tr>
+                        </thead>
+                        <tbody class="text-gray-700 font-bold">
+                            <tr class="border-b border-uc-gray"><td class="p-3">Être</td><td class="p-3 text-uc-turquoise-dark">Je suis</td><td class="p-3">Yo soy / estoy</td></tr>
+                            <tr class="border-b border-uc-gray"><td class="p-3">Avoir</td><td class="p-3 text-uc-turquoise-dark">J'ai</td><td class="p-3">Yo tengo</td></tr>
+                            <tr class="border-b border-uc-gray"><td class="p-3">Aller</td><td class="p-3 text-uc-turquoise-dark">Je vais</td><td class="p-3">Yo voy</td></tr>
+                            <tr class="border-b border-uc-gray"><td class="p-3">Faire</td><td class="p-3 text-uc-turquoise-dark">Je fais</td><td class="p-3">Yo hago</td></tr>
+                            <tr class="border-b border-uc-gray"><td class="p-3">Pouvoir</td><td class="p-3 text-uc-turquoise-dark">Je peux</td><td class="p-3">Yo puedo</td></tr>
+                            <tr class="border-b border-uc-gray"><td class="p-3">Vouloir</td><td class="p-3 text-uc-turquoise-dark">Je veux</td><td class="p-3">Yo quiero</td></tr>
+                            <tr><td class="p-3">Devoir</td><td class="p-3 text-uc-turquoise-dark">Je dois</td><td class="p-3">Yo debo</td></tr>
+                        </tbody>
+                    </table>
+                </div>
+            </section>
+
+            <!-- Tabla: Verbos Pronominales -->
+            <section>
+                <h2 class="text-lg font-extrabold text-uc-navy mb-3"><i class="fa-solid fa-arrows-rotate text-uc-turquoise mr-2"></i>Pronominales (Rutina)</h2>
+                <div class="border-2 border-uc-gray rounded-xl overflow-hidden">
+                    <table class="w-full text-left border-collapse">
+                        <thead>
+                            <tr class="bg-uc-turquoise-light text-uc-navy-dark">
+                                <th class="p-3 border-b-2 border-uc-gray font-extrabold">Verbo</th>
+                                <th class="p-3 border-b-2 border-uc-gray font-extrabold">Conjugación (Je)</th>
+                            </tr>
+                        </thead>
+                        <tbody class="text-gray-700 font-bold">
+                            <tr class="border-b border-uc-gray"><td class="p-3">Se réveiller</td><td class="p-3 text-uc-turquoise-dark">Je <span class="text-uc-red">me</span> réveille</td></tr>
+                            <tr class="border-b border-uc-gray"><td class="p-3">Se lever</td><td class="p-3 text-uc-turquoise-dark">Je <span class="text-uc-red">me</span> lève</td></tr>
+                            <tr class="border-b border-uc-gray"><td class="p-3">Se laver</td><td class="p-3 text-uc-turquoise-dark">Je <span class="text-uc-red">me</span> lave</td></tr>
+                            <tr><td class="p-3">S'habiller</td><td class="p-3 text-uc-turquoise-dark">Je <span class="text-uc-red">m'</span>habille</td></tr>
+                        </tbody>
+                    </table>
+                </div>
+            </section>
+
+            <!-- Tabla: COD y COI -->
+            <section>
+                <h2 class="text-lg font-extrabold text-uc-navy mb-3"><i class="fa-solid fa-link text-uc-green-dark mr-2"></i>Pronombres COD y COI</h2>
+                <p class="text-sm font-bold text-gray-500 mb-2">Se colocan <span class="underline">antes</span> del verbo conjugado.</p>
+                <div class="border-2 border-uc-gray rounded-xl overflow-hidden">
+                    <table class="w-full text-left border-collapse text-sm">
+                        <thead>
+                            <tr class="bg-uc-turquoise-light text-uc-navy-dark">
+                                <th class="p-3 border-b-2 border-uc-gray font-extrabold">Persona</th>
+                                <th class="p-3 border-b-2 border-uc-gray font-extrabold">COD<br><span class="text-xs font-normal">(¿Qué/Quién?)</span></th>
+                                <th class="p-3 border-b-2 border-uc-gray font-extrabold">COI<br><span class="text-xs font-normal">(¿A quién?)</span></th>
+                            </tr>
+                        </thead>
+                        <tbody class="text-gray-700 font-bold">
+                            <tr class="border-b border-uc-gray"><td class="p-3">1ª Sing. (Yo)</td><td class="p-3">me / m'</td><td class="p-3">me / m'</td></tr>
+                            <tr class="border-b border-uc-gray"><td class="p-3">2ª Sing. (Tú)</td><td class="p-3">te / t'</td><td class="p-3">te / t'</td></tr>
+                            <tr class="border-b border-uc-gray"><td class="p-3">3ª Sing. (Él/Ella)</td><td class="p-3 text-uc-red">le / la / l'</td><td class="p-3 text-uc-red">lui</td></tr>
+                            <tr class="border-b border-uc-gray"><td class="p-3">1ª Plur. (Nos.)</td><td class="p-3">nous</td><td class="p-3">nous</td></tr>
+                            <tr class="border-b border-uc-gray"><td class="p-3">2ª Plur. (Ust.)</td><td class="p-3">vous</td><td class="p-3">vous</td></tr>
+                            <tr><td class="p-3">3ª Plur. (Ellos)</td><td class="p-3 text-uc-red">les</td><td class="p-3 text-uc-red">leur</td></tr>
+                        </tbody>
+                    </table>
+                </div>
+            </section>
+
+        </main>
+    </div>
     <script>
         const pronunciarPalabra = (texto) => {
     // Cancela cualquier audio que se esté reproduciendo
@@ -268,7 +365,9 @@
         
         const btnQuit = document.getElementById('btn-quit');
         const btnHome = document.getElementById('btn-home');
-
+        const screenGrammar = document.getElementById('screen-grammar');
+        const btnOpenGrammar = document.getElementById('btn-open-grammar');
+        const btnCloseGrammar = document.getElementById('btn-close-grammar');
         // --- 3. App State ---
         let lessonQueue = [];
         let totalUniqueQuestions = 0;
@@ -459,39 +558,47 @@
             return arr;
         }
 
+        // Navegación de la Guía de Gramática
+        btnOpenGrammar.addEventListener('click', () => {
+            screenHome.classList.add('hidden');
+            screenHome.classList.remove('flex');
+            screenGrammar.classList.remove('hidden');
+            screenGrammar.classList.add('flex');
+        });
+
+        btnCloseGrammar.addEventListener('click', () => {
+            screenGrammar.classList.add('hidden');
+            screenGrammar.classList.remove('flex');
+            screenHome.classList.remove('hidden');
+            screenHome.classList.add('flex');
+        });
+
+        // Continuar lección
         btnContinue.addEventListener('click', () => {
             if(drawer.classList.contains('open')) {
                 nextQuestion();
             }
         });
 
-        // Quit lesson
-        btnContinue.addEventListener('click', () => {
-        if(drawer.classList.contains('open')) {
-            nextQuestion();
-        }
-    });
+        // Evento de audio independiente
+        btnAudio.addEventListener('click', () => {
+            pronunciarPalabra(questionText.textContent);
+        });
 
-    // Pega el evento del audio aquí, completamente independiente
-    btnAudio.addEventListener('click', () => {
-        pronunciarPalabra(questionText.textContent);
-    });
+        // Salir de la lección
+        btnQuit.addEventListener('click', () => {
+            if(confirm('¿Seguro que quieres salir? Perderás tu progreso.')) {
+                // Oculta la lección
+                screenLesson.classList.add('hidden');
+                screenLesson.classList.remove('flex');
+                
+                // Muestra el menú principal
+                screenHome.classList.remove('hidden');
+                screenHome.classList.add('flex');
+            }
+        });
 
-    // Quit lesson
-   // Quit lesson
-    btnQuit.addEventListener('click', () => {
-        if(confirm('¿Seguro que quieres salir? Perderás tu progreso.')) {
-            // Oculta la lección
-            screenLesson.classList.add('hidden');
-            screenLesson.classList.remove('flex');
-            
-            // Muestra el menú principal
-            screenHome.classList.remove('hidden');
-            screenHome.classList.add('flex');
-        }
-    });
-
-        // Go home from finish screen
+        // Ir al inicio desde la pantalla de completado
         btnHome.addEventListener('click', () => {
             screenComplete.classList.add('hidden');
             screenComplete.classList.remove('flex');
