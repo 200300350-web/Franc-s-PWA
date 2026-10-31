@@ -135,7 +135,7 @@
             <div class="flex items-center gap-4 mb-10 w-full"> 
                 <!-- Character Avatar (Ajolote) -->
             <div class="w-28 h-28 shrink-0 flex items-center justify-center overflow-visible">
-    <img src="logo-ajolote.png" alt="Ajolote Francés UC" class="w-full h-full object-contain drop-shadow-md transition-transform duration-300 hover:scale-110 active:-rotate-12 active:scale-95 cursor-pointer">
+    <img src="logo-ajolote.png" alt="Ajolote Francés UC" class="w-full h-full object-contain drop-shadow-md transition-transform duration-300 hover:scale-110 active:-rotate-12 active:scale-95 cursor-pointer"> <img id="mascot" src="logo-ajolote.png" alt="Ajolote Francés UC" class="w-full h-full object-contain drop-shadow-md transition-transform duration-300 hover:scale-110 active:-rotate-12 active:scale-95 cursor-pointer">
             </div>
                 <!-- Speech Bubble -->
                 <div class="relative bg-white border-2 border-uc-gray rounded-2xl p-5 shadow-sm flex-1 flex justify-between items-center">
@@ -383,6 +383,7 @@
         const screenGrammar = document.getElementById('screen-grammar');
         const btnOpenGrammar = document.getElementById('btn-open-grammar');
         const btnCloseGrammar = document.getElementById('btn-close-grammar');
+        const mascot = document.getElementById('mascot');
         // --- 3. App State ---
         let lessonQueue = [];
         let totalUniqueQuestions = 0;
@@ -446,7 +447,7 @@
                 finishLesson();
                 return;
             }
-
+            mascot.src = 'ajolote-piensa.png';
             // Close drawer
             drawer.classList.remove('open');
             isAnswerSubmitted = false;
@@ -503,7 +504,7 @@
             // Show Drawer
             drawer.classList.add('open');
 
-            if (isCorrect) {
+            if (isCorrect) {mascot.src = 'ajolote-celebra.png';
                 // UI changes for correct
                 btnElement.classList.replace('border-uc-gray', 'border-uc-green-dark');
                 btnElement.classList.replace('bg-white', 'bg-uc-green-light');
@@ -603,6 +604,7 @@
         // Salir de la lección
         btnQuit.addEventListener('click', () => {
             if(confirm('¿Seguro que quieres salir? Perderás tu progreso.')) {
+                mascot.src = 'logo-ajolote.png';
                 // Oculta la lección
                 screenLesson.classList.add('hidden');
                 screenLesson.classList.remove('flex');
@@ -613,13 +615,14 @@
             }
         });
 
-        // Ir al inicio desde la pantalla de completado
-        btnHome.addEventListener('click', () => {
-            screenComplete.classList.add('hidden');
-            screenComplete.classList.remove('flex');
-            screenHome.classList.remove('hidden');
-            screenHome.classList.add('flex');
-        });
+       // Ir al inicio desde la pantalla de completado
+btnHome.addEventListener('click', () => {
+    mascot.src = 'logo-ajolote.png';
+    screenComplete.classList.add('hidden');
+    screenComplete.classList.remove('flex');
+    screenHome.classList.remove('hidden');
+    screenHome.classList.add('flex');
+});
 
         // Start
         initApp();
