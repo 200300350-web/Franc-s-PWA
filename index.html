@@ -2,6 +2,19 @@
 <html lang="es">
 <head> 
     <link rel="apple-touch-icon" href="logo-ajolote.png">
+    <style>
+  @keyframes rebote {
+    0%, 100% { transform: translateY(0) scale(1); }
+    50% { transform: translateY(-20px) scale(1.1); }
+  }
+  @keyframes sacudida {
+    0%, 100% { transform: translateX(0); }
+    25% { transform: translateX(-8px) rotate(-10deg); }
+    75% { transform: translateX(8px) rotate(10deg); }
+  }
+  .anim-rebote { animation: rebote 0.5s ease; }
+  .anim-sacudida { animation: sacudida 0.4s ease; }
+</style>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
     <title>Práctica de Francés - Estilo Duolingo</title>
@@ -506,8 +519,11 @@
             // Show Drawer
             drawer.classList.add('open');
 
-            if (isCorrect) {mascot.src = 'ajolote-celebra.png';
-                // UI changes for correct
+            if (isCorrect) {
+        mascot.src = 'ajolote-celebra.png';
+        mascot.classList.add('anim-rebote');
+        setTimeout(() => mascot.classList.remove('anim-rebote'), 500);
+        // UI changes for correct
                 btnElement.classList.replace('border-uc-gray', 'border-uc-green-dark');
                 btnElement.classList.replace('bg-white', 'bg-uc-green-light');
                 btnElement.classList.replace('text-gray-700', 'text-uc-green-dark');
@@ -524,6 +540,8 @@
                 
                 updateProgress();
             } else {
+                mascot.classList.add('anim-sacudida');
+        setTimeout(() => mascot.classList.remove('anim-sacudida'), 400);
                 // Logic: Re-add to queue (spaced repetition)
                 lessonQueue.push(currentPair);
 
